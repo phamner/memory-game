@@ -37,26 +37,33 @@ class Board extends React.Component {
       let cardAvatarOne = this.state.data[cardIdOne].avatar;
       let cardAvatarTwo = this.state.data[cardIdTwo].avatar;
 
-    if (cardAvatarOne === cardAvatarTwo) {
-      console.log('MATCH: ', cardAvatarOne, cardAvatarTwo);
-      this.setState({
-        twoCardsCurrentlyFlipped: [],
-        permanentlyFlippedCards: [ ...this.state.permanentlyFlippedCards, ...[cardIdOne, cardIdTwo] ]
-
-      })
-    } else {
-        console.log('NO MATCH')
+      if (cardAvatarOne === cardAvatarTwo) {
+        console.log('MATCH: ', cardAvatarOne, cardAvatarTwo);
         this.setState({
-          [cardIdOne]: false,
-          [cardIdTwo]: false,
-          twoCardsCurrentlyFlipped: []
+          twoCardsCurrentlyFlipped: [],
+          permanentlyFlippedCards: [ ...this.state.permanentlyFlippedCards, ...[cardIdOne, cardIdTwo] ]
+
         })
+      } 
+      else {
+        console.log('NO MATCH')
+        setTimeout(
+          function() {
+            console.log('delayed NO MATCH')
+            this.setState({
+              [cardIdOne]: false,
+              [cardIdTwo]: false,
+              twoCardsCurrentlyFlipped: []
+              })
+            }
+          .bind(this),
+          1000
+        );
       }
     }
   }
   
   render() {
-    // console.log(data)
     return (
       <div>
         {this.state.data.map((tile) => <Tile key={tile.id} tile={tile} flipInfo={this.state} flipCard={this.flipCard} permanentlyFlippedCards={this.state.permanentlyFlippedCards} twoCardsCurrentlyFlipped={this.state.twoCardsCurrentlyFlipped} />)}

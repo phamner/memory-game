@@ -1,5 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from {
+    // transform: scale(.50);
+    opacity: 0;
+  }
+
+  to {
+    // transform: scale(1);
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    // transform: scale(1);
+    opacity: 0;
+  }
+
+  to {
+    // transform: scale(.50);
+    opacity: 1;
+  }
+`;
 
 
 const Button = styled.button`
@@ -19,6 +43,12 @@ const TilePhoto = styled.img`
   width: 100px;
   height: 100px;
   visibility: ${props => props.selected ? "visible" : "hidden"};
+  animation: ${props => props.selected ? fadeOut : fadeIn} 1s linear;
+//   animation: 1s linear;
+
+//   transition: visibility 1s linear;
+  transform: rotateY(180deg);
+
 `;
 
 
