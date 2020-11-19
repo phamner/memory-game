@@ -42,7 +42,10 @@ class Board extends React.Component {
         if (cardAvatarOne === cardAvatarTwo) {
           console.log('MATCH: ', cardAvatarOne, cardAvatarTwo);
           this.setState({
-            twoCardsCurrentlyFlipped: []
+            twoCardsCurrentlyFlipped: [],
+            // permanentlyFlippedCards
+            permanentlyFlippedCards: [ ...this.state.permanentlyFlippedCards, ...[cardIdOne, cardIdTwo] ]
+
           })
         } 
         else {
@@ -62,7 +65,7 @@ class Board extends React.Component {
     // console.log(data)
     return (
       <div>
-        {this.state.data.map((tile) => <Tile key={tile.id} tile={tile} flipInfo={this.state} flipCard={this.flipCard} />)}
+        {this.state.data.map((tile) => <Tile key={tile.id} tile={tile} flipInfo={this.state} flipCard={this.flipCard} permanentlyFlippedCards={this.state.permanentlyFlippedCards} twoCardsCurrentlyFlipped={this.state.twoCardsCurrentlyFlipped} />)}
       </div>
     );
   }
