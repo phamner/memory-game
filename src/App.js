@@ -4,16 +4,22 @@ import Board from './Board';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
-  margin: auto;   
+  // margin: auto;   
+  position:absolute;
+  // top: 5%;
+  left: 25%;
 `;
 
+const Title = styled.h1`
+text-align: center;
+`;
 
 
 
 function App() {
   return (
     <AppContainer >
-      <h1>Robot Memory Game</h1>
+      <Title>Robot Memory Game</Title>
       <Board />
     </AppContainer>
   );

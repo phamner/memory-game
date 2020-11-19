@@ -27,27 +27,29 @@ const fadeOut = keyframes`
 
 
 const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
+  background: pink;
+  border-radius: 10px;
+//   border: 2px solid palevioletred;
   color: palevioletred;
 //   margin: 0 1em;
 //   padding: 0.25em 1em;
   width: 150px;
   height: 150px;
+
 `
 
 const TilePhoto = styled.img`
-  border-radius: 100%;
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
+//   border-radius: 100%;
+//   border: 1px solid black;
+  width: 140px;
+  height: 140px;
   visibility: ${props => props.selected ? "visible" : "hidden"};
   animation: ${props => props.selected ? fadeOut : fadeIn} 1s linear;
 //   animation: 1s linear;
 
 //   transition: visibility 1s linear;
-  transform: rotateY(180deg);
+//   transform: rotateY(180deg);
+  
 
 `;
 
