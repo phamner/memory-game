@@ -1,6 +1,16 @@
 import React from 'react';
 import Tile from './Tile.js';
-import data from './data.js'
+import data from './data.js';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 600px;
+`;
+
+
 
 
 class Board extends React.Component {
@@ -61,13 +71,19 @@ class Board extends React.Component {
         );
       }
     }
+    // if (this.state.permanentlyFlippedCards.length === 20) {
+    //   alert('YOU FOUND ALL THE ROBOTS')
+    // }
   }
   
   render() {
+    // let shuffledCards = this.state.data.sort(() => Math.random() - 0.5)
+
+
     return (
-      <div>
+      <CardContainer>
         {this.state.data.map((tile) => <Tile key={tile.id} tile={tile} flipInfo={this.state} flipCard={this.flipCard} permanentlyFlippedCards={this.state.permanentlyFlippedCards} twoCardsCurrentlyFlipped={this.state.twoCardsCurrentlyFlipped} />)}
-      </div>
+      </CardContainer>
     );
   }
 }

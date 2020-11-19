@@ -1,13 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import Board from './Board';
+import styled from 'styled-components';
+
+const AppContainer = styled.div`
+  margin: auto;   
+`;
+
+
+
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer >
       <h1>Robot Memory Game</h1>
       <Board />
-    </div>
+    </AppContainer>
   );
 }
 

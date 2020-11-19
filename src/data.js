@@ -131,7 +131,8 @@ export default [{
     "email": "cwhaphama@bigcartel.com",
     "title": "Junior Executive",
     "avatar": "https://robohash.org/rerumassumendaquaerat.jpg?size=100x100&set=set1"
-  }, {
+  }, 
+  {
     "id": 19,
     "first_name": "Towny",
     "last_name": "Dagworthy",
