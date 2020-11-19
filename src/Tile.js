@@ -23,10 +23,8 @@ const TilePhoto = styled.img`
 
 
 function Tile(props) {
-    // console.log('permanantly flipped cards:  ', props.permanentlyFlippedCards, '   ' , props.tile.id)
     let buttonDisabled = false;
     if (props.permanentlyFlippedCards.includes(props.tile.id) || props.twoCardsCurrentlyFlipped.includes(props.tile.id)) {
-        // console.log('DISABLE THE BUTTON FOOL')
         buttonDisabled = true;
     }
 

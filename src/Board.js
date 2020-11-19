@@ -36,28 +36,22 @@ class Board extends React.Component {
       let cardIdTwo = this.state.twoCardsCurrentlyFlipped[1];
       let cardAvatarOne = this.state.data[cardIdOne].avatar;
       let cardAvatarTwo = this.state.data[cardIdTwo].avatar;
-      // console.log(this.state.data[0].avatar, this.state.data[1].avatar, this.state.data[2].avatar)
-      // console.log(cardAvatarOne, cardAvatarTwo)
 
-        if (cardAvatarOne === cardAvatarTwo) {
-          console.log('MATCH: ', cardAvatarOne, cardAvatarTwo);
-          this.setState({
-            twoCardsCurrentlyFlipped: [],
-            // permanentlyFlippedCards
-            permanentlyFlippedCards: [ ...this.state.permanentlyFlippedCards, ...[cardIdOne, cardIdTwo] ]
+    if (cardAvatarOne === cardAvatarTwo) {
+      console.log('MATCH: ', cardAvatarOne, cardAvatarTwo);
+      this.setState({
+        twoCardsCurrentlyFlipped: [],
+        permanentlyFlippedCards: [ ...this.state.permanentlyFlippedCards, ...[cardIdOne, cardIdTwo] ]
 
-          })
-        } 
-        else {
-          console.log('NO MATCH')
-          this.setState({
-            [cardIdOne]: false,
-            [cardIdTwo]: false,
-            twoCardsCurrentlyFlipped: []
-          })
-      
-        }
-        // console.log(cardIdOne,cardIdTwo, cardAvatarOne)
+      })
+    } else {
+        console.log('NO MATCH')
+        this.setState({
+          [cardIdOne]: false,
+          [cardIdTwo]: false,
+          twoCardsCurrentlyFlipped: []
+        })
+      }
     }
   }
   
