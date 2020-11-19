@@ -18,15 +18,16 @@ const TilePhoto = styled.img`
   border: 1px solid black;
   width: 100px;
   height: 100px;
+  visibility: ${props => props.selected ? "visible" : "hidden"};
 `;
 
 
 function Tile(props) {
-    console.log(props.tile.avatar)
+    // console.log(props.flipInfo[props.tile.id])
     return (
         <div>
         <Button onClick={() => props.flipCard(props.tile.id)}>
-            <TilePhoto src={props.tile.avatar}/>
+            <TilePhoto selected={props.flipInfo[props.tile.id]} src={props.tile.avatar}/>
         </Button>
         </div>
     );

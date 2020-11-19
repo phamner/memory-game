@@ -5,7 +5,7 @@ import Board from './Board';
 function App() {
   return (
     <div className="App">
-      <h1>hello lord</h1>
+      <h1>Robot Memory Game</h1>
       <Board />
     </div>
   );
