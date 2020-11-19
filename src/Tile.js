@@ -25,7 +25,7 @@ function Tile(props) {
     console.log(props.tile.avatar)
     return (
         <div>
-        <Button>
+        <Button onClick={() => props.flipCard(props.tile.id)}>
             <TilePhoto src={props.tile.avatar}/>
         </Button>
         </div>

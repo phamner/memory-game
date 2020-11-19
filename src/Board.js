@@ -8,17 +8,22 @@ class Board extends React.Component {
     super(props);
     this.state = {
       data: data,
-      tileOne: false,
-      tileTwo: false,
-      tileThree: false,
-      tileFour: false,
-      tileFive: false,
-      tileSix: false,
-      tileSeven: false,
-      tileEight: false,
-      tileNine: false,
-      tileTen: false
+      tilePairOne: false,
+      tilePairTwo: false,
+      tilePairThree: false,
+      tilePairFour: false,
+      tilePairFive: false,
+      tilePairSix: false,
+      tilePairSeven: false,
+      tilePairEight: false,
+      tilePairNine: false,
+      tilePairTen: false
     };
+    this.flipCard = this.flipCard.bind(this);
+  }
+
+  flipCard(id){
+    console.log(id)
   }
   
   render() {
@@ -26,7 +31,7 @@ class Board extends React.Component {
     return (
       <div>
         <h1>This is the board</h1>
-        {this.state.data.map((tile) => <Tile key={tile.id} tile={tile} />)}
+        {this.state.data.map((tile) => <Tile key={tile.id} tile={tile} flipCard={this.flipCard} />)}
 
       </div>
     );
